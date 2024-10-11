@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>kalkulator м²</h1>
+    <label for="squareMeters">ilosc м²:</label>
+    <input type="number" id="squareMeters" placeholder="podaj ilosc">
+    
+    <button onclick="calculate()">Wynik</button>
+    
+    <h2 id="result"></h2>
+    <h3 id="enteredMeters"></h3>
+</div>
+
+<script>
+    function calculate() {
+        const pricePerSquareMeter = 8;
+        const squareMeters = document.getElementById("squareMeters").value;
+        
+        if (squareMeters && squareMeters > 0) {
+            const result = squareMeters * pricePerSquareMeter;     
+            document.getElementById("enteredMeters").innerText = `Metry kwadratowe: ${squareMeters} м²`;
+            document.getElementById("result").innerText = `Wartość: ${result} zł`;
+       
+        } else {
+            document.getElementById("result").innerText = `Wpisc ilosc!`;
+            document.getElementById("enteredMeters").innerText = ``;
+        }
+    }
+</script>
